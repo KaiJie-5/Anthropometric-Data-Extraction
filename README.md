@@ -165,18 +165,46 @@ The goal of this challenge is therefore to obtain these anthropometric measureme
 
 # Anthropometrics
 
-The provided anthropometrics are based on landmark points on the subject's head and pinna. Each dimension in the anthropometric feature vector represents the Euclidean distance between two landmark points.
+The provided anthropometrics are based on a number of landmark points on the subject's head and pinna. Each dimension in the anthropometric feature vector represents the Euclidean distance between two landmark points.
+The landmark points for each pinna are defined as follows:
 
-The anthropometrics are defined as:
-- x₁ = |IJ| (distance between ear canal entrances)
-- p₁ = |BC| (tragus to intertragal notch distance)
-- p₂ = |AD| (tragus to antihelix distance)
-- p₃ = |CF| (antihelix to helix top distance)
-- p₄ = |GH| (helix top to earlobe distance)
-- p₅ = |AE| (tragus to outer helix distance)
+<img src="img/landmarks.png" alt="pinna landmarks" width="600"/>
 
-The overall anthropometrics feature vector is formed as:
-**a** = [x₁, p₁,left, ..., p₅,left, p₁,right, ..., p₅,right]ᵀ
+| Landmark | Description |
+| -------- | ----------- |
+| A | point on the ridge of the tragus at the height of the ear canal entrance |
+| B | lowest point of the intertragal notch |
+| C | midpoint on the upper ridge of the antihelix |
+| D | point on the ridge of the antihelix at the same height as the ear canal entrance |
+| E | point on the outer ridge of the helix at the same height as the ear canal entrance |
+| F | top point of the inner ridge of the helix |
+| G | top point of the outer ridge of the helix |
+| H | lowest point of the ear lobe |
+| I | point at right ear canal entrance |
+| J | point at left ear canal entrance |
+
+The anthropometrics are then defined as:
+
+<img src="img/anthropometrics.png" alt="pinna anthropometrics" width=600/>
+
+$x_1 = |\overline{IJ}|, p_{1} = |\overline{BC}|, p_2 = |\overline{AD}|, p_3 = |\overline{CF}|, p_4 = |\overline{GH}|, p_5 = |\overline{AE}|$
+
+<!-- $$
+\begin{align*}
+x_1 &= |\overline{IJ}|\\
+d_{(1+2)} &= |\overline{BC}|\\
+d_3 &= |\overline{AD}|\\
+d_4 &= |\overline{CF}|\\
+d_5 &= |\overline{GH}|\\
+d_6 &= |\overline{AE}|
+\end{align*}
+$$ -->
+
+
+
+The overall anthropometrics feature vector is formed as: 
+
+$\mathbf{a} = [x_1, p_{1, \text{left}}, \ldots, p_{5, \text{left}}, p_{1, \text{right}}, \ldots, p_{5, \text{right}}]^T$
 
 # Model Architecture
 
