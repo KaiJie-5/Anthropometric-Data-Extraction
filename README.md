@@ -25,10 +25,9 @@ Data sourced from the [SONICOM](https://www.sonicom.eu/) dataset. Original image
 
 This work is part of the Tech Arena 2025 challenge and implements state-of-the-art deep learning approaches for anthropometric measurement extraction from RGBD imagery.
 
-# Installation under Windows 10/11
+# Installation under Ubuntu 20.04LTS
 
 ```
-cd /path/to/HeadStart
 
 # install conda see https://docs.conda.io/projects/conda/en/latest/user-guide/install/windows.html
 # Download and install Anaconda or Miniconda for Windows
